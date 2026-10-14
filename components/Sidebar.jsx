@@ -1,4 +1,3 @@
-// src/components/Sidebar.jsx
 import React from 'react';
 
 function Sidebar({ activeTab, onSelectTab, onSelectProject }) {
@@ -43,11 +42,10 @@ function Sidebar({ activeTab, onSelectTab, onSelectProject }) {
               <button
                 key={item.id}
                 onClick={() => onSelectTab(item.id)}
-                className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${
-                  activeTab === item.id
+                className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${activeTab === item.id
                     ? 'bg-blue-600 text-white'
                     : 'text-gray-400 hover:bg-gray-800 hover:text-gray-200'
-                }`}
+                  }`}
               >
                 <span className="text-lg">{item.icon}</span>
                 <span className="text-sm font-medium">{item.label}</span>
@@ -70,11 +68,10 @@ function Sidebar({ activeTab, onSelectTab, onSelectProject }) {
               <button
                 key={project.id}
                 onClick={() => onSelectProject(project.id)}
-                className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${
-                  project.active
+                className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${project.active
                     ? 'bg-gray-800 text-white'
                     : 'text-gray-400 hover:bg-gray-800 hover:text-gray-200'
-                }`}
+                  }`}
               >
                 <span className="w-6 h-6 bg-gray-700 rounded-full flex items-center justify-center text-xs">
                   {project.icon}

@@ -1,4 +1,3 @@
-// src/components/ProgressBar.jsx
 import React from 'react';
 
 function ProgressBar({ percentage, label }) {
@@ -6,7 +5,7 @@ function ProgressBar({ percentage, label }) {
     <div className="flex items-center gap-3">
       <div className="flex-1">
         <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
-          <div 
+          <div
             className="h-full bg-blue-500 rounded-full transition-all duration-500"
             style={{ width: `${percentage}%` }}
           />

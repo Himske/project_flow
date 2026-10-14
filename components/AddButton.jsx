@@ -1,4 +1,3 @@
-// src/components/AddButton.jsx
 import React from 'react';
 
 function AddButton({ icon, label, onClick }) {

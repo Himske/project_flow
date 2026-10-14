@@ -1,4 +1,3 @@
-// src/pages/Overview.jsx
 import React, { useState } from 'react';
 import AddButton from '../components/AddButton';
 import ProgressBar from '../components/ProgressBar';
@@ -8,12 +7,12 @@ function Overview({ project, searchQuery }) {
     { id: 1, title: 'Add Markdown formatting preview for project docs', tags: ['Notes', 'Markdown'], date: 'Oct 16', completed: false },
     { id: 2, title: 'Implement drag-and-drop or status toggle for board view', tags: ['Frontend', 'UI/UX'], date: 'Oct 14', completed: false },
   ]);
-  
+
   const [notes] = useState([
     { id: 1, title: 'Architecture Blueprint & FastAPI Integration', snippet: 'System Architecture ProjectFlow combines the responsiveness of...', pinned: true },
     { id: 2, title: 'Workspace UX Checklist & Best Practices', snippet: 'Craft / Notion Inspired Principles: 1. Focus First: Collapse sidebars when...', pinned: false },
   ]);
-  
+
   const [links] = useState([
     { id: 1, title: 'Tailwind CSS Modern Color Palette', url: 'tailwindcss.com', description: 'Slate, Zinc, Indigo, and Violet color scales for crafting refined dark mode UIs.', category: 'Design', tags: ['Tailwind', 'CSS'] },
     { id: 2, title: 'Lucide Icons Directory', url: 'lucide.dev', description: 'Clean, consistent open-source iconography for dashboard and productivity tool actions.', category: 'Tools', tags: ['Icons', 'UI'] },
@@ -52,8 +51,8 @@ function Overview({ project, searchQuery }) {
           <div className="space-y-3">
             {tasks.map(task => (
               <div key={task.id} className="flex items-start gap-3 p-3 rounded-lg bg-gray-700/50 hover:bg-gray-700 transition-colors">
-                <input 
-                  type="checkbox" 
+                <input
+                  type="checkbox"
                   className="mt-1 w-4 h-4 rounded border-gray-600 bg-gray-600 text-blue-500 focus:ring-blue-500"
                 />
                 <div className="flex-1 min-w-0">
@@ -79,12 +78,12 @@ function Overview({ project, searchQuery }) {
             <div className="relative w-24 h-24 mb-4">
               <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
                 <circle cx="50" cy="50" r="45" fill="none" stroke="#1f2937" strokeWidth="8" />
-                <circle 
-                  cx="50" 
-                  cy="50" 
-                  r="45" 
-                  fill="none" 
-                  stroke="#3b82f6" 
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="45"
+                  fill="none"
+                  stroke="#3b82f6"
                   strokeWidth="8"
                   strokeDasharray="283"
                   strokeDashoffset={283 - (283 * 50) / 100}

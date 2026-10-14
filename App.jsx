@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
@@ -36,51 +35,51 @@ function App() {
   return (
     <Router>
       <div className="flex h-screen bg-gray-900 text-gray-100">
-        <Sidebar 
+        <Sidebar
           activeTab={activeTab}
           onSelectTab={setActiveTab}
           onSelectProject={setSelectedProject}
         />
         <div className="flex-1 flex flex-col overflow-hidden">
-          <Header 
+          <Header
             searchQuery={searchQuery}
             onSearch={setSearchQuery}
-            quickAdd={() => {}}
+            quickAdd={() => { }}
           />
           <ContentArea>
             <Routes>
-              <Route 
-                path="/" 
+              <Route
+                path="/"
                 element={
-                  <Overview 
+                  <Overview
                     project={selectedProject}
                     searchQuery={searchQuery}
                   />
-                } 
+                }
               />
-              <Route 
-                path="/links" 
+              <Route
+                path="/links"
                 element={
-                  <Links 
+                  <Links
                     searchQuery={searchQuery}
                   />
-                } 
+                }
               />
-              <Route 
-                path="/notes" 
+              <Route
+                path="/notes"
                 element={
-                  <Notes 
+                  <Notes
                     searchQuery={searchQuery}
                   />
-                } 
+                }
               />
-              <Route 
-                path="/todos" 
+              <Route
+                path="/todos"
                 element={
-                  <Todos 
+                  <Todos
                     searchQuery={searchQuery}
                   />
-                } 
+                }
               />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>

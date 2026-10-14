@@ -1,4 +1,3 @@
-// src/pages/Todos.jsx
 import React, { useState } from 'react';
 
 function Todos({ searchQuery }) {
@@ -11,7 +10,7 @@ function Todos({ searchQuery }) {
 
   const [newTask, setNewTask] = useState('');
 
-  const filteredTasks = tasks.filter(t => 
+  const filteredTasks = tasks.filter(t =>
     t.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     t.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -43,7 +42,7 @@ function Todos({ searchQuery }) {
         <div className="flex items-center gap-3">
           <div className="flex-1">
             <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
-              <div 
+              <div
                 className="h-full bg-blue-500 rounded-full transition-all duration-500"
                 style={{ width: `${(tasks.filter(t => t.completed).length / tasks.length) * 100}%` }}
               />
@@ -88,10 +87,10 @@ function Todos({ searchQuery }) {
             {tasks.filter(t => t.status === 'todo').map(task => (
               <div key={task.id} className="p-3 rounded-lg bg-gray-700/50 hover:bg-gray-700 transition-colors">
                 <div className="flex items-start gap-3 mb-2">
-                  <input 
-                    type="checkbox" 
+                  <input
+                    type="checkbox"
                     checked={task.completed}
-                    onChange={() => {}}
+                    onChange={() => { }}
                     className="mt-1 w-4 h-4 rounded border-gray-600 bg-gray-600 text-blue-500 focus:ring-blue-500"
                   />
                   <div className="flex-1 min-w-0">
@@ -129,10 +128,10 @@ function Todos({ searchQuery }) {
             {tasks.filter(t => t.status === 'in-progress').map(task => (
               <div key={task.id} className="p-3 rounded-lg bg-gray-700/50 hover:bg-gray-700 transition-colors">
                 <div className="flex items-start gap-3 mb-2">
-                  <input 
-                    type="checkbox" 
+                  <input
+                    type="checkbox"
                     checked={task.completed}
-                    onChange={() => {}}
+                    onChange={() => { }}
                     className="mt-1 w-4 h-4 rounded border-gray-600 bg-gray-600 text-blue-500 focus:ring-blue-500"
                   />
                   <div className="flex-1 min-w-0">
@@ -170,10 +169,10 @@ function Todos({ searchQuery }) {
             {tasks.filter(t => t.status === 'done').map(task => (
               <div key={task.id} className="p-3 rounded-lg bg-gray-700/50 opacity-75">
                 <div className="flex items-start gap-3 mb-2">
-                  <input 
-                    type="checkbox" 
+                  <input
+                    type="checkbox"
                     checked={task.completed}
-                    onChange={() => {}}
+                    onChange={() => { }}
                     className="mt-1 w-4 h-4 rounded border-gray-600 bg-gray-600 text-blue-500 focus:ring-blue-500"
                   />
                   <div className="flex-1 min-w-0">

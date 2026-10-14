@@ -1,9 +1,8 @@
-// src/pages/Links.jsx
 import React, { useState } from 'react';
 
 function Links({ searchQuery }) {
   const [filter, setFilter] = useState('all');
-  
+
   const links = [
     { id: 1, title: 'Tailwind CSS Modern Color Palette', url: 'tailwindcss.com', description: 'Slate, Zinc, Indigo, and Violet color scales for crafting refined dark mode UIs.', category: 'Design', tags: ['Tailwind', 'CSS'] },
     { id: 2, title: 'Lucide Icons Directory', url: 'lucide.dev', description: 'Clean, consistent open-source iconography for dashboard and productivity tool actions.', category: 'Tools', tags: ['Icons', 'UI'] },
@@ -11,8 +10,8 @@ function Links({ searchQuery }) {
     { id: 4, title: 'FastAPI Official Documentation & Tutorial', url: 'fastapi.tiangolo.com', description: 'Interactive API reference, dependency injection guides, and SQL databases tutorial with SQLAlchemy.', category: 'Docs', tags: ['FastAPI', 'Python'] },
   ];
 
-  const filteredLinks = filter === 'all' 
-    ? links 
+  const filteredLinks = filter === 'all'
+    ? links
     : links.filter(l => l.category.toLowerCase() === filter.toLowerCase());
 
   const getCategoryIcon = (category) => {
@@ -39,11 +38,10 @@ function Links({ searchQuery }) {
       <div className="flex items-center gap-2">
         <button
           onClick={() => setFilter('all')}
-          className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-colors ${
-            filter === 'all'
+          className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-colors ${filter === 'all'
               ? 'bg-blue-600 text-white'
               : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
-          }`}
+            }`}
         >
           All links {links.length}
         </button>
@@ -51,11 +49,10 @@ function Links({ searchQuery }) {
           <button
             key={cat}
             onClick={() => setFilter(cat)}
-            className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-colors ${
-              filter === cat
+            className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-colors ${filter === cat
                 ? 'bg-blue-600 text-white'
                 : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
-            }`}
+              }`}
           >
             {cat} {links.filter(l => l.category === cat).length}
           </button>
@@ -74,9 +71,9 @@ function Links({ searchQuery }) {
               </button>
             </div>
             <h3 className="text-lg font-semibold text-white mb-1">{link.title}</h3>
-            <a 
-              href={link.url} 
-              target="_blank" 
+            <a
+              href={link.url}
+              target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-blue-400 hover:text-blue-300 break-all"
             >

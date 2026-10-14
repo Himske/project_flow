@@ -1,9 +1,9 @@
-// src/pages/Notes.jsx
 import React, { useState } from 'react';
 
 function Notes({ searchQuery }) {
   const [notes, setNotes] = useState([
-    { id: 1, title: 'Architecture Blueprint & FastAPI Integration', snippet: 'System Architecture ProjectFlow combines the responsiveness of modern React with the reliability of a Python FastAPI + SQLite backend.', content: `### System Architecture
+    {
+      id: 1, title: 'Architecture Blueprint & FastAPI Integration', snippet: 'System Architecture ProjectFlow combines the responsiveness of modern React with the reliability of a Python FastAPI + SQLite backend.', content: `### System Architecture
 
 ProjectFlow combines the responsiveness of modern React with the reliability of a Python FastAPI + SQLite backend.
 
@@ -16,7 +16,8 @@ ProjectFlow combines the responsiveness of modern React with the reliability of 
 # Run local FastAPI server anytime:
 uvicorn craftflow:app --reload
 \`\`\`
-`, pinned: true, lastEdited: 'Oct 12' },
+`, pinned: true, lastEdited: 'Oct 12'
+    },
     { id: 2, title: 'Workspace UX Checklist & Best Practices', snippet: 'Craft / Notion Inspired Principles: 1. Focus First: Collapse sidebars when... ', content: 'Workspace UX Checklist and best practices for ProjectFlow.', pinned: false, lastEdited: 'Oct 10' },
   ]);
 
@@ -37,9 +38,8 @@ uvicorn craftflow:app --reload
             <button
               key={note.id}
               onClick={() => setSelectedNoteId(note.id)}
-              className={`w-full p-4 text-left hover:bg-gray-800 transition-colors ${
-                selectedNoteId === note.id ? 'bg-gray-800' : ''
-              }`}
+              className={`w-full p-4 text-left hover:bg-gray-800 transition-colors ${selectedNoteId === note.id ? 'bg-gray-800' : ''
+                }`}
             >
               <div className="flex items-start gap-2 mb-1">
                 <span className="text-lg">📄</span>
